@@ -1,12 +1,51 @@
+/* soft reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-image: url('http://www.vanessametonini.com.br/imersaocss/a1/img/fundo.jpg');
+  background-image: url('../img/fundo.jpg');
   background-size: auto 100vh; 
-  font-family: Arial;
+  font-family: 'Source Code Pro', monospace;
   height: 100vh;
+  font-size: 12px;
+}
+
+/* Se a tela tiver pelo menos 400px vai carregar estes estilos */
+@media (min-width: 400px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* breakpoint */
+@media (min-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* breakpoint */
+@media (min-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu {
   background-color: white;
+  position: fixed;
+  width: 100vw;
+  top: 0;
 }
 
 .menu ul {
@@ -18,8 +57,20 @@ body {
  list-style: none; 
 }
 
+.menu a {
+  display: block;
+  padding: 10px 20px;
+  transition: background-color 1s, color 1s;
+}
+
+.menu a:active,
+.menu a:hover {
+  background-color: blue;
+  color: white;
+}
+
 a {
-  color: teal;
+  color: blue;
   text-decoration: none;
 }
 
@@ -33,6 +84,79 @@ a:hover {
   text-align: center;
 }
 
+.site-title {
+  font-size: 4em;
+  font-family: 'Covered By Your Grace', cursive;
+}
+
 .site-subtitle {
- font-style: italic;
+  font-style: italic;
+  font-family: 'Balsamiq Sans', cursive;
+  line-height: 1.6em;
+}
+
+.contato,
+.tecnologias {
+  padding: 2em;
+  min-height: 100vh;
+
+}
+
+.contato h2,
+.tecnologias h2 {
+  color: whitesmoke;
+  font-family: 'Balsamiq Sans', cursive;
+  margin-bottom: 1.2em;
+  font-size: 2em;
+
+}
+
+.tecnologias .grid {
+  display: grid;
+  gap: 2em;
+}
+
+@media (min-width: 560px) {
+  .img-tecnologias {
+    height: 200px;
+    width: 200px;
+  }
+  .tecnologias .grid {
+    grid-template-columns: 240px 240px;
+
+    justify-content: space-around;
+  }
+}
+
+.tecnologias figure {
+  text-align: center;
+}
+
+.img-tecnologias {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  object-fit: left bottom;
+  transition: transform 1s;
+}
+
+.img-tecnologias:hover {
+  transform: scale(1.2);
+}
+
+.contato .icons {
+  text-align: center;
+}
+
+.contato a {
+  color: whitesmoke;
+  font-size: 4em;
+  transition: text-shadow 1s;
+}
+
+.contato a:active,
+.contato a:hover {
+  text-decoration: none;
+  text-shadow: 0px 0px 10px whitesmoke;
+
 }
